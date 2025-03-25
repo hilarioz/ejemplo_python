@@ -33,14 +33,19 @@ for _ in range(3):
         print(f"{i + 1}. {answer}")
     # El usuario tiene 2 intentos para responder correctamente
     for intento in range(2):
-        user_answer = int(input("Respuesta: ")) - 1
-        # Se verifica si la respuesta es correcta
-        if user_answer == correct_answers_index[question_index]:
-            print("¡Correcto!")
-            break
+        user_input = input("Respuesta: ")
+        #Se verifica la validez de la entrada
+        if user_input == "1" or user_input == "2" or user_input == "3" or user_input == "4":
+            user_answer = int(user_input) - 1
+            # Se verifica si la respuesta es correcta
+            if user_answer == correct_answers_index[question_index]:
+                print("¡Correcto!")
+                break
+        else:
+            print("Respuesta no válida")
+            exit(1)
+    # Si el usuario no responde correctamente después de 2 intentos se muestra la respuesta correcta
     else:
-        # Si el usuario no responde correctamente después de 2 intentos,
-        # se muestra la respuesta correcta
         print("Incorrecto. La respuesta correcta es:")
         print(answers[question_index][correct_answers_index[question_index]])
     # Se imprime un blanco al final de la pregunta
