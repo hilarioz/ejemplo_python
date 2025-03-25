@@ -24,11 +24,10 @@ answers = [
 correct_answers_index = [1, 2, 0, 3, 1]
 # Puntaje del usuario al iniciar
 puntaje = 0
+# Se genera la muestra de 3 preguntas distintas
+question_to_ask = random.sample(list(zip(questions, answers, correct_answers_index)), k=3)
 # El usuario deberá contestar 3 preguntas
 for _ in range(3):
-    # Se selecciona una pregunta aleatoria
-    question_to_ask = random.choices(list(zip(questions, answers, correct_answers_index)), k=3)
-    
     # Se muestra la pregunta y las respuestas posibles
     print(question_to_ask[_][0])
     for i, answer in enumerate(question_to_ask[_][1]):
@@ -55,4 +54,4 @@ for _ in range(3):
         print(question_to_ask[_][2]+1)
     # Se imprime un blanco al final de la pregunta
     print()
-    print(f"Puntaje final: {puntaje}")
+print(f"Puntaje final: {puntaje}")
