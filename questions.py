@@ -51,7 +51,7 @@ for _ in range(3):
     # Si el usuario no responde correctamente después de 2 intentos se muestra la respuesta correcta
     else:
         print("Incorrecto. La respuesta correcta es la numero:")
-        print(question_to_ask[_][2]+1)
+        print(enumerate(question_to_ask[_][2])[question_to_ask[_][2]])
     # Se imprime un blanco al final de la pregunta
     print()
 print(f"Puntaje final: {puntaje}")
